@@ -1,2 +1,49 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* manrope CDN */
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Manrope:wght@200..800&display=swap');
+/* Oxanium CDN */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+/* Roboto CDN */
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Geologica:wght@100..900&family=Manrope:wght@200..800&family=Oxanium:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.manrope-normal {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.oxanium-normal {
+  font-family: "Oxanium", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.roboto-normal {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.nav-bg-color{
+  background-color: rgba(42, 5, 87, 0.607);
+}
+
+.nav-link {
+  color: white;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* When NavLink is active */
+.nav-link.active {
+  color: #4913A1; /* Change to your preferred color */
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid #4913A1;
+  border-radius: 5px;
+  background: white;
+}
