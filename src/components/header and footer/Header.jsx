@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import logo from "../../../Assets/logo-mobile.png"
+import "../../index.css"
 const Header = () => {
 
     const link = <>
@@ -12,7 +13,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="fixed top-0 w-full z-1">
+        <div className="fixed w-full top-0  z-1 nav-bg-color">
             <div className="navbar roboto-normal">
                 <div className="navbar-start">
                     <div className="dropdown">

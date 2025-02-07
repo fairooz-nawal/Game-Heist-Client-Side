@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="max-w-8xl mx-auto manrope-normal">
+      <div className="max-w-screen mx-auto manrope-normal">
         <Header></Header>
         <Outlet></Outlet>
         <Footer></Footer>
