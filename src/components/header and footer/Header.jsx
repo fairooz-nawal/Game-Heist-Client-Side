@@ -39,7 +39,7 @@ const Header = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                         <div className=" w-[50px] h-[40px]"><img className="w-full" src={logo} alt="" /></div>
-                        <a className="oxanium-normal font-extrabold lg:text-3xl">Game Heist</a>
+                        <a className="oxanium-normal font-extrabold lg:text-3xl bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">GAME HEIST</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
