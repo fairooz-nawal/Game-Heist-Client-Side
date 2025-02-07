@@ -16,7 +16,6 @@
 
 .oxanium-normal {
   font-family: "Oxanium", serif;
-  font-optical-sizing: auto;
   font-style: normal;
 }
 
@@ -47,3 +46,4 @@
   border-radius: 5px;
   background: white;
 }
+

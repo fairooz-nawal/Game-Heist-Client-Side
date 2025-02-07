@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-
+import logo from "../../../Assets/logo-mobile.png"
 const Header = () => {
 
     const link = <>
@@ -12,8 +12,8 @@ const Header = () => {
     </>
 
     return (
-        <div>
-            <div className="navbar nav-bg-color roboto-normal">
+        <div className="fixed top-0 w-full z-1">
+            <div className="navbar roboto-normal">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="flex items-center space-x-3">
-                        <div className=" w-[50px] h-[40px]"><img className="w-full" src="../../../Assets/logo-mobile.png" alt="" /></div>
+                        <div className=" w-[50px] h-[40px]"><img className="w-full" src={logo} alt="" /></div>
                         <a className="oxanium-normal font-extrabold lg:text-3xl">Game Heist</a>
                     </div>
                 </div>

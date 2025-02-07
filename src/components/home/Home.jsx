@@ -1,9 +1,8 @@
 
-import Banner from './Banner';
+import Banner from './banner/Banner';
 const Home = () => {
     return (
-        <div>
-            this is Home
+        <div className='w-full'>
             <Banner></Banner>
         </div>
     );
