@@ -5,7 +5,7 @@ const PrivateRoute = ({ children }) => {
 
     const {user} = useContext(ContextApi);
     
-    if(!user=="null"){
+    if(user){
         return children;
     }
     return (

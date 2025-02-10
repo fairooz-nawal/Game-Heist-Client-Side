@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./signup.css"
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { ContextApi } from "../ContextAPI/ContextAPI";
 
@@ -54,6 +54,7 @@ const SignUp = () => {
                         icon: "success",
                         draggable: true
                       }); 
+                      <Navigate to='/signIn'></Navigate>
                 }
             })
           })

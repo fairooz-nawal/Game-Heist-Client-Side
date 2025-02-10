@@ -2,7 +2,7 @@ import "./signup.css"
 import { ContextApi } from "../ContextAPI/ContextAPI";
 import { useContext, useState } from "react";
 import Swal from 'sweetalert2'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 const SignIn = () => {
     const [error, setError] = useState('');
     const { signInUser, googleSignIn } = useContext(ContextApi);
@@ -35,7 +35,10 @@ const SignIn = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
-                        console.log(data)
+                        console.log(data);
+                        if(data.insertedId){
+                            <Navigate to='/'></Navigate>;
+                        }
                     })
             })
             .catch((error) => {
@@ -48,30 +51,9 @@ const SignIn = () => {
      const GoogleLogin = ()=>{
             googleSignIn()
             .then((result) => {
-              const user = result?.user;
-              console.log("User create at fb:",user);
-              const lastSignInTime = user?.metadata?.lastSignInTime;
-              const Person = {lastSignInTime};
-              console.log(user);
-              fetch('http://localhost:5000/users', {
-                method: 'PATCH',
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(Person)
-            })
-              .then(res => res.json())
-              .then(data =>{
-                  console.log(data)
-                  if(data.insertedId){
-                      Swal.fire({
-                          title: "Login Done Successfully!",
-                          icon: "success",
-                          draggable: true
-                        }); 
-                  }
-              })
-              
+             const user = result?.user;
+             console.log(user);
+              <Navigate to="/"></Navigate>
             }).catch((error) => {
               const errorCode = error.code;
               const errorMessage = error.message;
