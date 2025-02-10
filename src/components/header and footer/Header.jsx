@@ -4,23 +4,27 @@ import "../../index.css"
 import { useContext } from "react";
 import { ContextApi } from "../ContextAPI/ContextAPI";
 const Header = () => {
-    const {user,signOutUser} = useContext(ContextApi);
+    const { user, signOutUser } = useContext(ContextApi);
 
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         signOutUser()
-        .then(() => {
-          Navigate('/signIn');
-          }).catch((error) => {
-            // An error happened.
-          });
+            .then(() => {
+                <Navigate to="/signIn"></Navigate>
+            }).catch((error) => {
+                // An error happened.
+            });
     }
     const link = <>
         <NavLink className="pr-6 font-bold nav-link" to="/">Home</NavLink>
         <NavLink className="pr-6 font-bold nav-link" to="/allReview">All Review</NavLink>
-        <NavLink className="pr-6 font-bold nav-link" to="/addReview">Add Review</NavLink>
-        <NavLink className="pr-6 font-bold nav-link" to="/myReview">My Review</NavLink>
-        <NavLink className="pr-6 font-bold nav-link" to="/gameWatchList">Game Watch List</NavLink>
-
+        {
+            user &&
+            <>
+                <NavLink className="pr-6 font-bold nav-link" to="/addReview">Add Review</NavLink>
+                <NavLink className="pr-6 font-bold nav-link" to="/myReview">My Review</NavLink>
+                <NavLink className="pr-6 font-bold nav-link" to="/gameWatchList">Game Watch List</NavLink>
+            </>
+        }
     </>
 
     return (
@@ -59,16 +63,16 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    { user? 
-                    <>
-                    <NavLink className="pr-6 font-bold nav-link" to="/signIn">{user.displayName}</NavLink>
-                    <button className="pr-6 font-bold nav-link" onClick={handleSignOut}>Log Out</button>
-                    </> : 
-                    <>
-                    <NavLink className="pr-6 font-bold nav-link" to="/signIn">Sign In</NavLink>
-                    <NavLink className="pr-6 font-bold nav-link" to="/signUp">Sign Up</NavLink>
-                    </>}
-                    
+                    {user ?
+                        <>
+                            <NavLink to={`${user.displayName}`}><img className="rounded-xl w-[50px] h-[50px] lg:w-[70px] lg:h-[70px]" src={user.photoURL} alt="" /></NavLink>
+                            <button className="pr-6 font-bold nav-link" onClick={handleSignOut}>Log Out</button>
+                        </> :
+                        <>
+                            <NavLink className="pr-6 font-bold nav-link" to="/signIn">Sign In</NavLink>
+                            <NavLink className="pr-6 font-bold nav-link" to="/signUp">Sign Up</NavLink>
+                        </>}
+
                 </div>
             </div>
         </div>

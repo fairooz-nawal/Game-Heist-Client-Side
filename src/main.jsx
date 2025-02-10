@@ -15,6 +15,7 @@ import SignIn from './components/SignIn and SignUp/SignIn.jsx';
 import SignUp from './components/SignIn and SignUp/SignUp.jsx';
 import { AppProvider } from './components/ContextAPI/ContextAPI.jsx'
 import GameDetail from './components/home/GameCollection/GameDetail.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,15 +31,15 @@ const router = createBrowserRouter([
      },
       {
         path: "/addReview",
-        element: <AddReview></AddReview>,
+        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
      },
       {
         path: "/myReview",
-        element: <MyReview></MyReview>,
+        element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
      },
       {
         path: "/gameWatchList",
-        element: <GameWatchList></GameWatchList>,
+        element: <PrivateRoute><GameWatchList></GameWatchList></PrivateRoute>,
      },
       {
         path: "/signIn",
