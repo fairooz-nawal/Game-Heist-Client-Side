@@ -1,11 +1,12 @@
 import { useLoaderData } from 'react-router-dom';
 import {Slide } from "react-awesome-reveal";
+import bg  from "../../../../Assets/bg-4.webp"
 const GameDetail = () => {
     const details = useLoaderData()
     console.log(details);
     return (
         <div className='w-full h-[800px]  lg:h-[850px]  mx-auto relative'>
-            <img className="hidden lg:block" src="../../../../Assets/bg-4.webp" alt="" />
+            <img className="hidden lg:block" src={bg} alt="" />
             <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color lg:h-[70%] rounded-xl">
                     <div className="p-[10%] grid grid-cols-1 lg:grid-cols-2">
