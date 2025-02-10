@@ -1,6 +1,6 @@
 import { Slide } from "react-awesome-reveal";
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 const Game = ({game}) => {
     console.log(game);
     return (
@@ -15,7 +15,7 @@ const Game = ({game}) => {
                     <h2 className="oxanium-normal font-extrabold text-xl lg:text-2xl bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">{game.name}</h2>
                     <p>Starting At  <span className="bg-purple-500 p-2 rounded-2xl">$ {game.price}</span></p><br />
                     <div className="w-full">
-                        <button className="btn bg-amber-500 w-full mx-auto">Details</button>
+                     <Link to={`/details/${game._id}`}> <button className="btn bg-amber-500 w-full mx-auto">Details</button></Link>  
                     </div>
                 </div>
             </div>

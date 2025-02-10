@@ -14,6 +14,7 @@ import GameWatchList from './components/GameWatchList/GameWatchList.jsx';
 import SignIn from './components/SignIn and SignUp/SignIn.jsx';
 import SignUp from './components/SignIn and SignUp/SignUp.jsx';
 import { AppProvider } from './components/ContextAPI/ContextAPI.jsx'
+import GameDetail from './components/home/GameCollection/GameDetail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+     },
+      {
+        path: "/details/:id",
+        loader: ({params})=>fetch(`http://localhost:5000/default/${params.id}`),
+        element: <GameDetail></GameDetail>,
      },
     ]
   },

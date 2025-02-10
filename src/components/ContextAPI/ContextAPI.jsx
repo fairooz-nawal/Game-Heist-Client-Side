@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export const ContextApi = createContext();
 
 export const AppProvider = ({ children }) => {
-    const [defaultgame,setdefaultgame] = useState([])
+    const [defaultgame,setdefaultgame] = useState([]);
+    
     useEffect(()=>{
         fetch('http://localhost:5000/default')
         .then(res => res.json())
