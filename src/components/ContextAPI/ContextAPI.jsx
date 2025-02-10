@@ -1,6 +1,6 @@
 import { createContext, use, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut  } from 'firebase/auth';
 import auth from "../../../firebase"
 
 export const ContextApi = createContext();
@@ -19,13 +19,7 @@ export const AppProvider = ({ children }) => {
         })
     },[])
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/users')
-        .then(res =>res.json())
-        .then(data =>{
-            setuser(data);
-        })
-    },[])
+
     
     const createUser = (email,password) =>{
       setLoading(true);
@@ -42,8 +36,31 @@ export const AppProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
 
+    const signOutUser = () =>{
+        setLoading(true);
+        return signOut(auth)
+    }
+
+    useEffect(()=>{
+        const unsubscribe = onAuthStateChanged(auth, (Currentuser) => {
+            if (Currentuser) {
+             console.log("Logged IN user", Currentuser)
+             setuser(Currentuser);
+            } else {
+              console.log("No user Logged in")
+              setuser(null);
+            }
+          });
+          return () =>{
+            unsubscribe();
+          }
+    },[])
+
+   
+      console.log("Logged IN user", user)
+
     return (
-       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn}}>
+       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user}}>
         {children}
        </ContextApi.Provider>
     );

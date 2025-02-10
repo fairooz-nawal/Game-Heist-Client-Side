@@ -1,8 +1,19 @@
-import { NavLink } from "react-router-dom"
+import { Navigate, NavLink } from "react-router-dom"
 import logo from "../../../Assets/logo-mobile.png"
 import "../../index.css"
+import { useContext } from "react";
+import { ContextApi } from "../ContextAPI/ContextAPI";
 const Header = () => {
+    const {user,signOutUser} = useContext(ContextApi);
 
+    const handleSignOut = ()=>{
+        signOutUser()
+        .then(() => {
+          Navigate('/signIn');
+          }).catch((error) => {
+            // An error happened.
+          });
+    }
     const link = <>
         <NavLink className="pr-6 font-bold nav-link" to="/">Home</NavLink>
         <NavLink className="pr-6 font-bold nav-link" to="/allReview">All Review</NavLink>
@@ -48,8 +59,16 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    { user? 
+                    <>
+                    <NavLink className="pr-6 font-bold nav-link" to="/signIn">{user.displayName}</NavLink>
+                    <button className="pr-6 font-bold nav-link" onClick={handleSignOut}>Log Out</button>
+                    </> : 
+                    <>
                     <NavLink className="pr-6 font-bold nav-link" to="/signIn">Sign In</NavLink>
                     <NavLink className="pr-6 font-bold nav-link" to="/signUp">Sign Up</NavLink>
+                    </>}
+                    
                 </div>
             </div>
         </div>
