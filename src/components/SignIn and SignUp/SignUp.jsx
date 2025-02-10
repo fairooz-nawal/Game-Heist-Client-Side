@@ -1,5 +1,7 @@
 import "./signup.css"
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 const SignUp = () => {
     const handleRegistration = event =>{
         event.preventDefault();
@@ -23,6 +25,13 @@ const SignUp = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: "User Added Successfully!",
+                    icon: "success",
+                    draggable: true
+                  }); 
+            }
         })
     }
     return (
