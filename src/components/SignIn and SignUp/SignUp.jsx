@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import "./signup.css"
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { ContextApi } from "../ContextAPI/ContextAPI";
 
 const SignUp = () => {
+    const {createUser} = useContext(ContextApi);
+
     const handleRegistration = event =>{
         event.preventDefault();
         const form = event.target;
@@ -10,34 +14,44 @@ const SignUp = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photo, password);
-
-        const user = {name, email, photo, password};
-        console.log(user);
-
-        fetch('http://localhost:5000/users',{
-            method:'POST',
-            headers:{
-                "content-type":"application/json"
-            },
-            body:JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: "User Added Successfully!",
-                    icon: "success",
-                    draggable: true
-                  }); 
-            }
-        })
+        
+        createUser(email, password)
+        .then((result) => {
+            const user = result?.user;
+            console.log("User create at fb:",user);
+            const creationTime = user?.metadata?.creationTime;
+            const Person = {name, email, photo, creationTime};
+            console.log(user);
+            fetch('http://localhost:5000/users',{
+                method:'POST',
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(Person)
+            })
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        title: "Registration Done Successfully!",
+                        icon: "success",
+                        draggable: true
+                      }); 
+                }
+            })
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+        
     }
     return (
         <div className="">
             <div className="signUpCover min-h-screen">
-                <div className="pl-[20%] lg:pl-[10%] py-[20%] lg:pt-[9%] flex-col mx-auto lg:flex-row justify-between">
+                <div className="pl-[5%] lg:pl-[10%] py-[20%] lg:pt-[9%] flex-col mx-auto lg:flex-row justify-between">
                     <div className="lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                     </div>

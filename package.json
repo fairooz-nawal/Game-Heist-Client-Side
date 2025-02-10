@@ -13,6 +13,7 @@
     "@emotion/react": "^11.14.0",
     "@syncfusion/ej2-react-grids": "^28.2.4",
     "@tailwindcss/vite": "^4.0.3",
+    "firebase": "^11.3.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
     "motion": "^12.4.0",

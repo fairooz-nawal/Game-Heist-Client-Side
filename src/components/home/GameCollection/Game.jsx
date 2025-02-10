@@ -2,7 +2,6 @@ import { Slide } from "react-awesome-reveal";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const Game = ({game}) => {
-    console.log(game);
     return (
         <Slide direction="up">
             <div className="image-full w-[300px] h-[400px] mx-auto shadow-xl relative overflow-hidden rounded-2xl hover:border-4 border-gray-400">
