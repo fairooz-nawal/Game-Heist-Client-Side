@@ -9,7 +9,7 @@ import App from './App.jsx'
 import Home from './components/home/Home.jsx';
 import AddReview from './components/Review/AddReview.jsx';
 import MyReviewContainer from './components/Review/MyReviewContainer.jsx';
-import GameWatchList from './components/GameWatchList/GameWatchList.jsx';
+import GameWatchListContainer from './components/GameWatchList/GameWatchListContainer.jsx';
 import SignIn from './components/SignIn and SignUp/SignIn.jsx';
 import SignUp from './components/SignIn and SignUp/SignUp.jsx';
 import { AppProvider } from './components/ContextAPI/ContextAPI.jsx'
@@ -41,7 +41,8 @@ const router = createBrowserRouter([
      },
       {
         path: "/gameWatchList",
-        element: <PrivateRoute><GameWatchList></GameWatchList></PrivateRoute>,
+        element: <PrivateRoute><GameWatchListContainer></GameWatchListContainer></PrivateRoute>,
+        loader: ()=>fetch("http://localhost:5000/gamelist")
      },
       {
         path: "/signIn",

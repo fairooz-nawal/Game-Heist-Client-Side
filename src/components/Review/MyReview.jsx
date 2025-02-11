@@ -1,10 +1,31 @@
 import bg from "../../../Assets/bg-5.webp"
 import { Slide } from "react-awesome-reveal";
 import PropTypes from 'prop-types';
-
+import Swal from 'sweetalert2'
 const MyReview = ({ review }) => {
     const { photo, gameTitle, rating, email, name, gameGenre, year } = review;
-    console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year)
+    console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year);
+    const handleAddGameList = () => {
+        const gameList = { name, gameTitle, photo, email }
+        fetch('http://localhost:5000/gameList', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(gameList)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Added to GameList Successfully!",
+                        icon: "success",
+                        draggable: true
+                    });
+                }
+            })
+    }
     return (
         <div className='w-full h-[970px]  lg:h-[850px]  mx-auto relative'>
             <img className="hidden lg:block" src={bg} alt="" />
@@ -26,7 +47,7 @@ const MyReview = ({ review }) => {
                                     <p className="p-3 bg-purple-800 rounded-lg w-3/4 lg:w-3/4">Game Genre:{gameGenre}</p>
                                     <p className="p-3 bg-red-700 rounded-lg w-3/4 lg:w-3/4">Manufactur Year: {year}</p>
                                     <div className="w-1/3 flex gap-2 ">
-                                        <button className="btn bg-blue-600">Add to Gamelist</button>
+                                        <button onClick={handleAddGameList} className="btn bg-blue-600">Add to Gamelist</button>
                                         <button className="btn bg-red-500">Delete</button>
                                         <button className="btn bg-green-500">Update</button>
                                     </div>
