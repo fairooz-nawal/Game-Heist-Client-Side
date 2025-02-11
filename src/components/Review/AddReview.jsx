@@ -1,11 +1,11 @@
 
-import { Slide } from "react-awesome-reveal";
 import bg from "../../../Assets/bg-5.webp"
 import { useContext } from "react";
 import { ContextApi } from "../ContextAPI/ContextAPI";
 import Swal from 'sweetalert2'
 const AddReview = () => {
-    const { user } = useContext(ContextApi);
+    const { user,defaultgame } = useContext(ContextApi);
+    console.log(defaultgame);
     const handleAddReview = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -40,7 +40,7 @@ const AddReview = () => {
     }
 
     return (
-        <div className='w-full h-[800px]  lg:h-[1400px]  mx-auto relative'>
+        <div className='w-full h-[1100px]  lg:h-[1400px]  mx-auto relative'>
             <img className="hidden lg:block h-full" src={bg} alt="" />
             <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color border-2 border-gray-400 lg:h-[70%] rounded-xl">
@@ -60,7 +60,14 @@ const AddReview = () => {
                                     <label className="label">
                                         <span className="label-text text-xl">Game Title</span>
                                     </label>
-                                    <input type="text" name="gameTitle" placeholder="Game Title" className="w-full p-5 formBG rounded-xl" />
+                                    <select className="w-full p-5 formBG rounded-xl" name="gameTitle">
+                                        <option value="">Select a Game Title</option>
+                                        {
+                                           defaultgame.map(game => <option key={game._id} value ={game.gameTitle}>
+                                            {game.name}
+                                           </option>) 
+                                        }
+                                    </select>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -69,22 +76,44 @@ const AddReview = () => {
                                     <input type="email" name="email" placeholder="email" className="w-full p-5 formBG rounded-xl" defaultValue={user?.email} />
                                 </div>
                                 <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-xl">Game Thumbnail</span>
-                                    </label>
-                                    <input type="text" name="photo" placeholder="Game Thumbnail" className="w-full p-5 formBG rounded-xl" />
+                                <label className="label">
+                                        <span className="label-text text-xl">Game Photo</span>
+                                    </label><br />
+                                    <select className="w-full p-5 formBG rounded-xl" name="photo">
+                                        <option value="">Select a Game Thumbnail</option>
+                                        {
+                                           defaultgame.map(game => <option key={game._id} value ={game.photo}>
+                                            {game.name}
+                                           </option>) 
+                                        }
+                                    </select>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl">Game Rating 1-5</span>
                                     </label>
-                                    <input type="text" name="rating" placeholder="Game Rating" className="w-full p-5 formBG rounded-xl" />
+                                    <select className="w-full p-5 formBG rounded-xl" id="rating" name="rating">
+                                        <option value="">Select a Rating</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl">Publishing Year</span>
                                     </label>
-                                    <input type="text" name="year" placeholder="Game Rating" className="w-full p-5 formBG rounded-xl" />
+                                    <select className="w-full p-5 formBG rounded-xl" id="year" name="year">
+                                        <option value="">Select a Year</option>
+                                        <option value="2001-2005">2001-2005</option>
+                                        <option value="2006-2010">2006-2010</option>
+                                        <option value="2011-2015">2011-2015</option>
+                                        <option value="2016-2020">2016-2020</option>
+                                        <option value="2021-2024">2021-2024</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -101,7 +130,7 @@ const AddReview = () => {
                                         <option value="Fighting">Fighting</option>
                                         <option value="Racing">Racing</option>
                                         <option value="Puzzle">Puzzle</option>
-                                        <option value="Platformer">Platformer</option>
+                                        <option value="Sci-fi">Sci-fi</option>
                                         <option value="Survival">Survival</option>
                                         <option value="Horror">Horror</option>
                                         <option value="Other">Other</option>

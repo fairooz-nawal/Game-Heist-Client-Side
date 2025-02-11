@@ -9,7 +9,7 @@ import App from './App.jsx'
 import Home from './components/home/Home.jsx';
 import AllReview from './components/Review/AllReview.jsx';
 import AddReview from './components/Review/AddReview.jsx';
-import MyReview from './components/Review/MyReview.jsx';
+import MyReviewContainer from './components/Review/MyReviewContainer.jsx';
 import GameWatchList from './components/GameWatchList/GameWatchList.jsx';
 import SignIn from './components/SignIn and SignUp/SignIn.jsx';
 import SignUp from './components/SignIn and SignUp/SignUp.jsx';
@@ -34,8 +34,9 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
      },
       {
-        path: "/myReview",
-        element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
+        path: "/myReview/:email",
+        element: <PrivateRoute><MyReviewContainer></MyReviewContainer></PrivateRoute>,
+        loader: ({params})=>fetch(`http://localhost:5000/review/${params.email}`)
      },
       {
         path: "/gameWatchList",

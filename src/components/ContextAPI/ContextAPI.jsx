@@ -56,9 +56,6 @@ export const AppProvider = ({ children }) => {
           }
     },[])
 
-   
-      console.log("Logged IN user", user)
-
     return (
        <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user}}>
         {children}
