@@ -7,7 +7,6 @@ import {
 import './index.css'
 import App from './App.jsx'
 import Home from './components/home/Home.jsx';
-import AllReview from './components/Review/AllReview.jsx';
 import AddReview from './components/Review/AddReview.jsx';
 import MyReviewContainer from './components/Review/MyReviewContainer.jsx';
 import GameWatchList from './components/GameWatchList/GameWatchList.jsx';
@@ -16,6 +15,7 @@ import SignUp from './components/SignIn and SignUp/SignUp.jsx';
 import { AppProvider } from './components/ContextAPI/ContextAPI.jsx'
 import GameDetail from './components/home/GameCollection/GameDetail.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import AllReviewContainer from './components/Review/AllReviewContainer.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +27,8 @@ const router = createBrowserRouter([
      },
       {
         path: "/allReview",
-        element: <AllReview></AllReview>,
+        element: <AllReviewContainer></AllReviewContainer>,
+        loader: ()=>fetch(`http://localhost:5000/review`)
      },
       {
         path: "/addReview",

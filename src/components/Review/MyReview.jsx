@@ -6,7 +6,7 @@ const MyReview = ({ review }) => {
     const { photo, gameTitle, rating, email, name, gameGenre, year } = review;
     console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year)
     return (
-        <div className='w-full h-[800px]  lg:h-[850px]  mx-auto relative'>
+        <div className='w-full h-[970px]  lg:h-[850px]  mx-auto relative'>
             <img className="hidden lg:block" src={bg} alt="" />
             <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color lg:h-[70%] rounded-xl">
@@ -18,7 +18,7 @@ const MyReview = ({ review }) => {
                         </Slide>
                         <Slide direction="right">
                             <div className='w-full'>
-                                <div className="w-full mx-auto lg:mt-[10%] ml-0  space-y-4">
+                                <div className="w-full mx-auto lg:mt-[-4%] ml-0  space-y-4">
                                     <h1 className="text-3xl lg:text-5xl font-bold">{gameTitle}</h1>
                                     <p className="p-3 bg-orange-300 text-xl rounded-lg w-3/4 lg:w-3/4">Rating:{rating}/5</p>
                                     <p className="p-3 bg-gray-700 text-xl rounded-lg w-3/4 lg:w-3/4">{email}</p>
