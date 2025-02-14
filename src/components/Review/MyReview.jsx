@@ -7,7 +7,7 @@ const MyReview = ({ review }) => {
     const { _id, photo, gameTitle, rating, email, name, gameGenre, year } = review;
     const handleAddGameList = () => {
         const gameList = { name, gameTitle, photo, email }
-        fetch('http://localhost:5000/gameList', {
+        fetch('https://game-heist-server.vercel.app/gameList', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -46,7 +46,7 @@ const MyReview = ({ review }) => {
     }
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/review/${_id}`, {
+        fetch(`https://game-heist-server.vercel.app/review/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -22,7 +22,7 @@ const Header = () => {
             <>
                 <NavLink className="pr-6 font-bold nav-link" to="/addReview">Add Review</NavLink>
                 <NavLink className="pr-6 font-bold nav-link" to={`/myReview/${user.email}`}>My Review</NavLink>
-                <NavLink className="pr-6 font-bold nav-link" to="/gameWatchList">Game Watch List</NavLink>
+                <NavLink className="pr-6 font-bold nav-link" to={`/gameWatchList/${user.email}`}>Game Watch List</NavLink>
             </>
         }
     </>

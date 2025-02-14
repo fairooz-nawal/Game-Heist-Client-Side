@@ -38,7 +38,7 @@ const SignUp = () => {
             const creationTime = user?.metadata?.creationTime;
             const Person = {name, email, photo, creationTime};
             console.log(user);
-            fetch('http://localhost:5000/users',{
+            fetch('https://game-heist-server.vercel.app/users',{
                 method:'POST',
                 headers:{
                     "content-type":"application/json"
@@ -78,7 +78,7 @@ const SignUp = () => {
           const creationTime = user?.metadata?.creationTime;
           const Person = {name, email, photo, creationTime};
           console.log(user);
-          fetch('http://localhost:5000/users',{
+          fetch('https://game-heist-server.vercel.app/users',{
               method:'POST',
               headers:{
                   "content-type":"application/json"

@@ -27,7 +27,7 @@ const EditREview = () => {
           const year = form.year.value;
           const gameGenre = form.gameGenre.value;
           const Editreview = { name, gameTitle, email, photo, rating, year, gameGenre };
-          fetch(`http://localhost:5000/review/${newEmail}/${id}`, {
+          fetch(`https://game-heist-server.vercel.app/review/${newEmail}/${id}`, {
               method: 'PATCH',
               headers: {
                   "content-type": "application/json"

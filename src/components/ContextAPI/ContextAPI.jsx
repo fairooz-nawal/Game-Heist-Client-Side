@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
 
     useEffect(()=>{
-        fetch('http://localhost:5000/default')
+        fetch('https://game-heist-server.vercel.app/default')
         .then(res => res.json())
         .then(data=>{
             setdefaultgame(data)
@@ -21,7 +21,7 @@ export const AppProvider = ({ children }) => {
     },[])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('https://game-heist-server.vercel.app/review')
         .then(res => res.json())
         .then(data=>{
           setReview(data)

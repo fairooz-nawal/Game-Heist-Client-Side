@@ -5,7 +5,6 @@ import { ContextApi } from "../ContextAPI/ContextAPI";
 import Swal from 'sweetalert2'
 const AddReview = () => {
     const { user,defaultgame } = useContext(ContextApi);
-    console.log(defaultgame);
     const handleAddReview = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +18,7 @@ const AddReview = () => {
         
         const addreview = { name, gameTitle, email, photo, rating, year, gameGenre };
         console.log(addreview);
-        fetch('http://localhost:5000/review', {
+        fetch('https://game-heist-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

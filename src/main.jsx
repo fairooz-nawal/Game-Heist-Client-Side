@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/allReview",
         element: <AllReviewContainer></AllReviewContainer>,
-        loader: ()=>fetch(`http://localhost:5000/review`)
+        loader: ()=>fetch(`https://game-heist-server.vercel.app/review`)
      },
       {
         path: "/addReview",
@@ -39,17 +39,17 @@ const router = createBrowserRouter([
       {
         path: "/myReview/:email",
         element: <PrivateRoute><MyReviewContainer></MyReviewContainer></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/review/${params.email}`)
+        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/review/${params.email}`)
      },
       {
         path: "/editmyreview/:email/:id",
         element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/review/${params.email}/${params.id}`)
+        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/review/${params.email}/${params.id}`)
      },
       {
-        path: "/gameWatchList",
+        path: "/gameWatchList/:email",
         element: <PrivateRoute><GameWatchListContainer></GameWatchListContainer></PrivateRoute>,
-        loader: ()=>fetch("http://localhost:5000/gamelist")
+        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/gamelist/${params.email}`)
      },
       {
         path: "/signIn",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
      },
       {
         path: "/details/:id",
-        loader: ({params})=>fetch(`http://localhost:5000/default/${params.id}`),
+        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/default/${params.id}`),
         element: <GameDetail></GameDetail>,
      },
     ]

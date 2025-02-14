@@ -26,7 +26,7 @@ const SignIn = () => {
                 console.log(user);
                 const lastSignInTime = user?.metadata?.lastSignInTime;
                 const login = {email, lastSignInTime};
-                fetch('http://localhost:5000/users', {
+                fetch('https://game-heist-server.vercel.app/users', {
                     method: 'PATCH',
                     headers: {
                         "content-type": "application/json"
