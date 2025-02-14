@@ -1,6 +1,8 @@
 # React + Vite
 Game Heist, a user-friendly game review application. The goal of this project is to design a platform where users can explore and share game reviews. The website has key features such as user authentication and review management to enhance the user experience. The application have a clean and responsive UI, focusing on simplicity and functionality to provide a "chill" experience. 
 
+# Live link : https://game-heist-syeda-fairooz-nawal.netlify.app/
+
 # Layout Structure
 
 ## Navbar: The Navbar have the- 
