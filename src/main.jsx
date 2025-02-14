@@ -17,6 +17,7 @@ import GameDetail from './components/home/GameCollection/GameDetail.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import AllReviewContainer from './components/Review/AllReviewContainer.jsx';
 import EditReview from './components/Review/EditReview.jsx';
+import Error from './components/Error.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
      },
     ]
   },
+    {
+      path: "*",
+      element: <Error></Error>,
+   },
 ]);
 
 createRoot(document.getElementById('root')).render(
