@@ -16,6 +16,7 @@ import { AppProvider } from './components/ContextAPI/ContextAPI.jsx'
 import GameDetail from './components/home/GameCollection/GameDetail.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import AllReviewContainer from './components/Review/AllReviewContainer.jsx';
+import EditReview from './components/Review/EditReview.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path: "/myReview/:email",
         element: <PrivateRoute><MyReviewContainer></MyReviewContainer></PrivateRoute>,
         loader: ({params})=>fetch(`http://localhost:5000/review/${params.email}`)
+     },
+      {
+        path: "/editmyreview/:email/:id",
+        element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
+        loader: ({params})=>fetch(`http://localhost:5000/review/${params.email}/${params.id}`)
      },
       {
         path: "/gameWatchList",

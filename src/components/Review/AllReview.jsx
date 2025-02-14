@@ -3,6 +3,8 @@ import { Slide } from "react-awesome-reveal";
 import PropTypes from 'prop-types';
 
 const AllReview = ({ review }) => {
+   
+
     const { photo, gameTitle, rating, email, name, gameGenre, year } = review;
     console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year)
     return (
@@ -12,7 +14,7 @@ const AllReview = ({ review }) => {
                 <div className="nav-bg-color lg:h-[70%] rounded-xl">
                     <div className="p-[10%] grid grid-cols-1 lg:grid-cols-2">
                         <Slide direction="left">
-                            <div className="w-10/12 lg:w-full pb-5 mx-auto">
+                            <div className="w-10/12 lg:w-full mx-auto">
                                 <img src={photo} className="w-full lg:w-9/12 mx-auto rounded-lg shadow-2xl border-3 border-gray-200" />
                             </div>
                         </Slide>

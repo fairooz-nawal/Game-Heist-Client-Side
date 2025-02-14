@@ -54,7 +54,8 @@ const SignIn = () => {
              const user = result?.user;
              console.log(user);
               <Navigate to="/"></Navigate>
-            }).catch((error) => {
+            })
+            .catch((error) => {
               const errorCode = error.code;
               const errorMessage = error.message;
               console.log(errorCode, errorMessage);

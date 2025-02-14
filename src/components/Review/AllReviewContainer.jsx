@@ -1,13 +1,12 @@
-import { useLoaderData } from "react-router-dom";
 import AllReview from "./AllReview";
-
+import { useContext } from "react";
+import { ContextApi } from "../ContextAPI/ContextAPI";
 const AllReviewContainer = () => {
-    const review = useLoaderData();
-    console.log(review);
+    const {allreview} = useContext(ContextApi);
     return (
-        <div>
+        <div className="">
             {
-                review.map(review =><AllReview key={review._id} review={review}></AllReview>)
+                allreview.map(review =><AllReview key={review._id} review={review}></AllReview>)
             }
         </div>
     );

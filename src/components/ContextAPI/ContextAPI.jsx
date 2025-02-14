@@ -7,6 +7,7 @@ export const ContextApi = createContext();
 
 export const AppProvider = ({ children }) => {
     const [defaultgame,setdefaultgame] = useState([]);
+    const [allreview,setReview] = useState([]);
     const [loading, setLoading] = useState(true);
     const [user, setuser] = useState(null);
     const provider = new GoogleAuthProvider();
@@ -18,6 +19,14 @@ export const AppProvider = ({ children }) => {
             setdefaultgame(data)
         })
     },[])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/review')
+        .then(res => res.json())
+        .then(data=>{
+          setReview(data)
+        })
+    },[allreview])
 
 
     
@@ -57,7 +66,7 @@ export const AppProvider = ({ children }) => {
     },[])
 
     return (
-       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user}}>
+       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user,allreview}}>
         {children}
        </ContextApi.Provider>
     );
