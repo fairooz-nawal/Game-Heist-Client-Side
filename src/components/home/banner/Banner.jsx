@@ -5,10 +5,13 @@ import banner4 from "../../../../Assets/banner-4.webp"
 import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
-    
+    // In your component or JS file
+    const apiUrl = import.meta.env.VITE_API_URL;
+    console.log(import.meta.env);
+
 
     return (
-        <div className="carousel w-full lg:h-[700px]">
+        <div className="carousel w-full h-[350px] lg:h-[700px]">
             <div id="slide1" className="carousel-item relative w-full">
                 <img
                     src={banner4}
@@ -25,6 +28,7 @@ const Banner = () => {
                         <button className="btn text-black bg-gradient-to-b from-gray-100 to-blue-500">Order Your game Now</button>
                     </div>
                 </Fade>
+
 
                 <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                     <a href="#slide4" className="btn btn-circle">❮</a>

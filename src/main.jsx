@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/allReview",
         element: <AllReviewContainer></AllReviewContainer>,
-        loader: ()=>fetch(`https://game-heist-server.vercel.app/review`)
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/review`)
      },
       {
         path: "/addReview",
@@ -39,17 +39,17 @@ const router = createBrowserRouter([
       {
         path: "/myReview/:email",
         element: <PrivateRoute><MyReviewContainer></MyReviewContainer></PrivateRoute>,
-        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/review/${params.email}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/review/${params.email}`)
      },
       {
         path: "/editmyreview/:email/:id",
         element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
-        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/review/${params.email}/${params.id}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/review/${params.email}/${params.id}`)
      },
       {
         path: "/gameWatchList/:email",
         element: <PrivateRoute><GameWatchListContainer></GameWatchListContainer></PrivateRoute>,
-        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/gamelist/${params.email}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/gamelist/${params.email}`)
      },
       {
         path: "/signIn",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
      },
       {
         path: "/details/:id",
-        loader: ({params})=>fetch(`https://game-heist-server.vercel.app/default/${params.id}`),
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/default/${params.id}`),
         element: <GameDetail></GameDetail>,
      },
     ]

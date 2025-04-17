@@ -18,7 +18,7 @@ const AddReview = () => {
         
         const addreview = { name, gameTitle, email, photo, rating, year, gameGenre };
         console.log(addreview);
-        fetch('https://game-heist-server.vercel.app/review', {
+        fetch(`${import.meta.env.VITE_API_URL}/review`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -2,11 +2,11 @@ import "./signup.css"
 import { ContextApi } from "../ContextAPI/ContextAPI";
 import { useContext, useState } from "react";
 import Swal from 'sweetalert2'
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
     const [error, setError] = useState('');
     const { signInUser, googleSignIn } = useContext(ContextApi);
-
+    const navigate = useNavigate();
     const handleError = (error) =>{
                 Swal.fire({
                 icon: "error",
@@ -26,7 +26,7 @@ const SignIn = () => {
                 console.log(user);
                 const lastSignInTime = user?.metadata?.lastSignInTime;
                 const login = {email, lastSignInTime};
-                fetch('https://game-heist-server.vercel.app/users', {
+                fetch(`${import.meta.env.VITE_API_URL}/users`, {
                     method: 'PATCH',
                     headers: {
                         "content-type": "application/json"
@@ -37,7 +37,7 @@ const SignIn = () => {
                 .then(data => {
                         console.log(data);
                         if(data.insertedId){
-                            <Navigate to='/'></Navigate>;
+                            navigate('/');
                         }
                     })
             })
@@ -52,8 +52,8 @@ const SignIn = () => {
             googleSignIn()
             .then((result) => {
              const user = result?.user;
-             console.log(user);
-              <Navigate to="/"></Navigate>
+             console.log("this is from sign in",user);
+              navigate('/');
             })
             .catch((error) => {
               const errorCode = error.code;

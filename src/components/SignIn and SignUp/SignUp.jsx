@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import "./signup.css"
-import { Link, Navigate } from "react-router-dom";
+import {  useNavigate,Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { ContextApi } from "../ContextAPI/ContextAPI";
 
 const SignUp = () => {
     const {createUser,googleSignIn} = useContext(ContextApi);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
     const handleError = (error) =>{
             Swal.fire({
             icon: "error",
@@ -38,7 +39,7 @@ const SignUp = () => {
             const creationTime = user?.metadata?.creationTime;
             const Person = {name, email, photo, creationTime};
             console.log(user);
-            fetch('https://game-heist-server.vercel.app/users',{
+            fetch(`${import.meta.env.VITE_API_URL}/users`,{
                 method:'POST',
                 headers:{
                     "content-type":"application/json"
@@ -54,8 +55,10 @@ const SignUp = () => {
                         icon: "success",
                         draggable: true
                       }); 
-                      <Navigate to='/signIn'></Navigate>
                 }
+               if(user){
+                <Navigate to='/'></Navigate>
+               }
             })
           })
           .catch((error) => {
@@ -70,15 +73,13 @@ const SignUp = () => {
     const GoogleRegistration = ()=>{
         googleSignIn()
         .then((result) => {
-          const user = result?.user;
-          console.log("User create at fb:",user);
-          const name = user?.displayName;
-          const email = user?.email;
-          const photo= user?.photoURL;
-          const creationTime = user?.metadata?.creationTime;
+          const newuser = result?.user;
+          const name = newuser?.displayName;
+          const email = newuser?.email;
+          const photo= newuser?.photoURL;
+          const creationTime = newuser?.metadata?.creationTime;
           const Person = {name, email, photo, creationTime};
-          console.log(user);
-          fetch('https://game-heist-server.vercel.app/users',{
+          fetch(`${import.meta.env.VITE_API_URL}/users`,{
               method:'POST',
               headers:{
                   "content-type":"application/json"
@@ -93,7 +94,8 @@ const SignUp = () => {
                       title: "Registration Done Successfully!",
                       icon: "success",
                       draggable: true
-                    }); 
+                    });
+                    navigate('/'); 
               }
           })
           

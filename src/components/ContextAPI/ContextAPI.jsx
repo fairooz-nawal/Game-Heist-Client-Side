@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
 
     useEffect(()=>{
-        fetch('https://game-heist-server.vercel.app/default')
+        fetch(`${import.meta.env.VITE_API_URL}/default`)
         .then(res => res.json())
         .then(data=>{
             setdefaultgame(data)
@@ -21,7 +21,7 @@ export const AppProvider = ({ children }) => {
     },[])
 
     useEffect(()=>{
-        fetch('https://game-heist-server.vercel.app/review')
+        fetch(`${import.meta.env.VITE_API_URL}/review`)
         .then(res => res.json())
         .then(data=>{
           setReview(data)
@@ -66,7 +66,7 @@ export const AppProvider = ({ children }) => {
     },[])
 
     return (
-       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user,allreview}}>
+       <ContextApi.Provider value={{defaultgame, createUser,signInUser, googleSignIn,signOutUser,user,allreview,loading}}>
         {children}
        </ContextApi.Provider>
     );
