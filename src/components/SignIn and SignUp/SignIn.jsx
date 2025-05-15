@@ -67,13 +67,13 @@ const SignIn = () => {
     return (
         <div className="h-[700px] md:h-[700px] lg:h-[720px] w-full relative">
             <img className="w-full h-full" src={bg} alt="" />
-            {/* <div className="pl-[5%] lg:pl-[10%] py-[20%] lg:pt-[9%] flex-col mx-auto lg:flex-row justify-between">
+            <div className="absolute top-10 md:top-0 lg:top-0 left-1 md:left-5 lg:left-5 pl-[5%] lg:pl-[10%] py-[20%] lg:pt-[9%] flex-col mx-auto lg:flex-row justify-between">
                 {
                     error && handleError(error)
                 }
                 <div className="lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                </div>
+                </div><br />
                 <div className="card formBG w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
@@ -101,7 +101,7 @@ const SignIn = () => {
                         </div>
                     </form>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };
