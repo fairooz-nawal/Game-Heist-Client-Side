@@ -1,7 +1,7 @@
-import banner1 from "../../../../Assets/banner-1.webp"
-import banner2 from "../../../../Assets/banner-2.webp"
-import banner3 from "../../../../Assets/banner-3.webp"
-import banner4 from "../../../../Assets/banner-4.webp"
+import banner1 from "../../Assets/banner-1.webp"
+import banner2 from "../../Assets/banner-2.webp"
+import banner3 from "../../Assets/banner-3.webp"
+import banner4 from "../../Assets/banner-4.webp"
 import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {

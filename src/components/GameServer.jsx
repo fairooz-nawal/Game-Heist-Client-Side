@@ -1,8 +1,8 @@
 
-import icon1 from "../../../../Assets/icon-1.png"
-import icon2 from "../../../../Assets/icon-2.png"
-import icon3 from "../../../../Assets/icon-3.png"
-import icon4 from "../../../../Assets/icon-4.png"
+import icon1 from "../../Assets/icon-1.png"
+import icon2 from "../../Assets/icon-2.png"
+import icon3 from "../../Assets/icon-3.png"
+import icon4 from "../../Assets/icon-4.png"
 const GameServer = () => {
     return (
         <div className="max-w-7xl mx-auto py-10">

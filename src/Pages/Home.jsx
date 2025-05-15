@@ -1,8 +1,8 @@
-import GameServer from './Game Server/GameServer';
-import Banner from './banner/Banner';
-import GameContainer from './GameCollection/GameContainer';
-import OrderGameServer from './OrderGameServer/OrderGameServer';
-import DefaultRating from './rating/DefaultRating';
+import GameServer from '../components/GameServer';
+import Banner from '../components/Banner';
+import GameContainer from '../components/GameCollection/GameContainer';
+import OrderGameServer from '../components/OrderGameServer/OrderGameServer';
+import DefaultRating from '../components/DefaultRating';
 const Home = () => {
     return (
         <div className='bg-gray-900'>
@@ -11,7 +11,6 @@ const Home = () => {
             <OrderGameServer></OrderGameServer>
             <DefaultRating></DefaultRating>
             <GameContainer></GameContainer>
-           
         </div>
     );
 };

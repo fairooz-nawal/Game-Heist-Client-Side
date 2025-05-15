@@ -1,8 +1,8 @@
 import bg from "../../../Assets/bg-5.webp"
 import { useContext } from "react";
-import { ContextApi } from "../ContextAPI/ContextAPI";
 import Swal from 'sweetalert2'
 import { useLoaderData } from "react-router-dom";
+import { ContextApi } from "../ContextAPI";
 
 const EditREview = () => {
       const { user,defaultgame } = useContext(ContextApi);

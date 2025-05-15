@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ContextApi } from '../ContextAPI/ContextAPI';
+import { ContextApi } from '../components/ContextAPI';
 import { useNavigate } from 'react-router-dom';
 const PrivateRoute = ({ children }) => {
     const navigate = useNavigate();

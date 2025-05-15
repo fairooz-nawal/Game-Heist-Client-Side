@@ -1,5 +1,5 @@
 import './OrderServer.css'
-import avatar from "../../../../Assets/avatar.webp"
+import avatar from "../../../Assets/avatar.webp"
 import { Fade,Slide } from "react-awesome-reveal";
 const OrderGameServer = () => {
     return (

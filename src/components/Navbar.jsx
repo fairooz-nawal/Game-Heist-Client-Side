@@ -1,8 +1,7 @@
 import { Navigate, NavLink } from "react-router-dom"
-import logo from "../../../Assets/logo-mobile.png"
-import "../../index.css"
+import logo from "../../Assets/logo-mobile.png"
 import { useContext } from "react";
-import { ContextApi } from "../ContextAPI/ContextAPI";
+import { ContextApi } from "./ContextAPI";
 const Header = () => {
     const { user, signOutUser } = useContext(ContextApi);
 
@@ -69,8 +68,8 @@ const Header = () => {
                             <button className="pr-6 font-bold nav-link" onClick={handleSignOut}>Log Out</button>
                         </> :
                         <>
-                            <NavLink className="pr-6 font-bold nav-link" to="/signIn">Sign In</NavLink>
-                            <NavLink className="pr-6 font-bold nav-link" to="/signUp">Sign Up</NavLink>
+                            <NavLink className="pr-6 font-bold nav-link" to="/auth/login">Sign In</NavLink>
+                            <NavLink className="pr-6 font-bold nav-link" to="/auth/registration">Sign Up</NavLink>
                         </>}
 
                 </div>

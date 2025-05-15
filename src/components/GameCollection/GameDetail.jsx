@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 import {Slide } from "react-awesome-reveal";
-import bg  from "../../../../Assets/bg-4.webp"
+import bg  from "../../../Assets/bg-4.webp"
 const GameDetail = () => {
     const details = useLoaderData()
     console.log(details);

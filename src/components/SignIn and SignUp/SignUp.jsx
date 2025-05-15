@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import "./signup.css"
 import {  useNavigate,Link } from "react-router-dom";
 import Swal from 'sweetalert2'
-import { ContextApi } from "../ContextAPI/ContextAPI";
+import { ContextApi } from "../ContextAPI";
 
 const SignUp = () => {
     const {createUser,googleSignIn} = useContext(ContextApi);

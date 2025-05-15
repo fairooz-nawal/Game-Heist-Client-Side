@@ -1,8 +1,8 @@
 
 import bg from "../../../Assets/bg-5.webp"
 import { useContext } from "react";
-import { ContextApi } from "../ContextAPI/ContextAPI";
 import Swal from 'sweetalert2'
+import { ContextApi } from "../ContextAPI";
 const AddReview = () => {
     const { user,defaultgame } = useContext(ContextApi);
     const handleAddReview = (event) => {

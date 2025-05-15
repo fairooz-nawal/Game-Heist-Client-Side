@@ -1,6 +1,7 @@
+import { ContextApi } from "../ContextAPI";
 import AllReview from "./AllReview";
 import { useContext } from "react";
-import { ContextApi } from "../ContextAPI/ContextAPI";
+;
 const AllReviewContainer = () => {
     const {allreview} = useContext(ContextApi);
     return (
