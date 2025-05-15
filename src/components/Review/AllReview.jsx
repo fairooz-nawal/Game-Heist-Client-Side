@@ -1,4 +1,4 @@
-import bg from "../../../Assets/bg-5.webp"
+
 import { Slide } from "react-awesome-reveal";
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ const AllReview = ({ review }) => {
     console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year)
     return (
         <div className='w-full h-[970px]  lg:h-[850px]  mx-auto relative'>
-            <img className="hidden lg:block" src={bg} alt="" />
+           
             <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color lg:h-[70%] rounded-xl">
                     <div className="p-[10%] grid grid-cols-1 lg:grid-cols-2">
