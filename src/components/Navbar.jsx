@@ -2,7 +2,7 @@ import { Navigate, NavLink } from "react-router-dom"
 import logo from "../../Assets/logo-mobile.png"
 import { useContext } from "react";
 import { ContextApi } from "./ContextAPI";
-const Header = () => {
+const Navbar = () => {
     const { user, signOutUser } = useContext(ContextApi);
 
     const handleSignOut = () => {
@@ -78,4 +78,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

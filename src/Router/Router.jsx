@@ -14,7 +14,6 @@ import AllReviewContainer from '../../src/components/Review/AllReviewContainer.j
 import EditReview from '../../src/components/Review/EditReview.jsx';
 import Error from '../../src/components/Error.jsx';
 import Home from '../Pages/Home.jsx';
-import App from "../App.jsx";
 import HomeLayout from "../Layout/HomeLayout.jsx";
 import AuthLayout from "../Layout/AuthLayout.jsx";
 
