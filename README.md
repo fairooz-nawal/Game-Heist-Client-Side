@@ -128,19 +128,19 @@ VITE_APPID=your_app_id
 
 ## Game Heist WEB APP
 
-![Screenshot 2025-05-21 042350](https://github.com/user-attachments/assets/300d5f49-9a54-4042-be79-247854381487)
-![Screenshot 2025-05-21 041858](https://github.com/user-attachments/assets/3ab2ea0a-a028-4c83-be43-6706624b5257)
-![Screenshot 2025-05-21 040519](https://github.com/user-attachments/assets/d6c3cf73-7de1-4e01-96dc-829981c3b5e5)
-![Screenshot 2025-05-21 040503](https://github.com/user-attachments/assets/464b0db4-bce1-43f8-a066-4e7535ae2c02)
-![Screenshot 2025-05-21 040444](https://github.com/user-attachments/assets/977946e7-8e3c-4a35-a049-bf56dedb665f)
-![Screenshot 2025-05-21 035237](https://github.com/user-attachments/assets/9bff835d-3751-4ab2-a2ec-61fbd997a8c7)
-![Screenshot 2025-05-21 035220](https://github.com/user-attachments/assets/5b8e9221-f812-4533-82df-6b51c1314fa3)
-![Screenshot 2025-05-21 035002](https://github.com/user-attachments/assets/ad6627ae-962d-4e95-a493-706b475b49b2)
-![Screenshot 2025-05-21 034953](https://github.com/user-attachments/assets/2af5a96a-4b41-43b7-91f1-a60ccb549388)
-![Screenshot 2025-05-21 034939](https://github.com/user-attachments/assets/fe08d5e6-f56f-456f-a4e2-568f6d50021e)
-![Screenshot 2025-05-21 034931](https://github.com/user-attachments/assets/825d4ca6-62ac-45ee-b3f5-cd6573aff4d6)
-![Screenshot 2025-05-21 034917](https://github.com/user-attachments/assets/6f66bb59-9d63-4fd0-a31b-991bed4f90ec)
 ![Screenshot 2025-05-21 034905](https://github.com/user-attachments/assets/30785a58-d102-4433-8bed-6f7ad7bdf396)
+![Screenshot 2025-05-21 034917](https://github.com/user-attachments/assets/6f66bb59-9d63-4fd0-a31b-991bed4f90ec)
+![Screenshot 2025-05-21 034931](https://github.com/user-attachments/assets/825d4ca6-62ac-45ee-b3f5-cd6573aff4d6)
+![Screenshot 2025-05-21 034939](https://github.com/user-attachments/assets/fe08d5e6-f56f-456f-a4e2-568f6d50021e)
+![Screenshot 2025-05-21 034953](https://github.com/user-attachments/assets/2af5a96a-4b41-43b7-91f1-a60ccb549388)
+![Screenshot 2025-05-21 035002](https://github.com/user-attachments/assets/ad6627ae-962d-4e95-a493-706b475b49b2)
+![Screenshot 2025-05-21 035220](https://github.com/user-attachments/assets/5b8e9221-f812-4533-82df-6b51c1314fa3)
+![Screenshot 2025-05-21 035237](https://github.com/user-attachments/assets/9bff835d-3751-4ab2-a2ec-61fbd997a8c7)
+![Screenshot 2025-05-21 040444](https://github.com/user-attachments/assets/977946e7-8e3c-4a35-a049-bf56dedb665f)
+![Screenshot 2025-05-21 040503](https://github.com/user-attachments/assets/464b0db4-bce1-43f8-a066-4e7535ae2c02)
+![Screenshot 2025-05-21 040519](https://github.com/user-attachments/assets/d6c3cf73-7de1-4e01-96dc-829981c3b5e5)
+![Screenshot 2025-05-21 041858](https://github.com/user-attachments/assets/3ab2ea0a-a028-4c83-be43-6706624b5257)
+![Screenshot 2025-05-21 042350](https://github.com/user-attachments/assets/300d5f49-9a54-4042-be79-247854381487)
 
 ## Installation and setup
 
