@@ -3,7 +3,7 @@ import avatar from "../../../Assets/avatar.webp"
 import { Fade,Slide } from "react-awesome-reveal";
 const OrderGameServer = () => {
     return (
-        <div className="bgCover max-w-7xl mx-auto flex flex-col-reverse lg:flex-row justify-between py-10">
+        <div className="bgCover w-full md:w-10/12 mx-auto p-5 flex flex-col-reverse lg:flex-row justify-between py-10">
             <div className="w-full lg:w-1/2 ">
                 <div className="w-full h-3/5 lg:mt-[20%]">
                     <button className='btn border-2 border-gray-300 ml-5'>Start Your game</button>

@@ -2,11 +2,11 @@ import { FaStar } from "react-icons/fa";
 const DefaultRating = () => {
     return (
         <div className="bg-black">
-            <div className="max-w-7xl mx-auto py-[100px]">
+            <div className="w-10/12 mx-auto py-[100px]">
                 <h1 className='oxanium-normal font-extrabold text-2xl lg:text-5xl bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent p-5'>4.8 OUT OF 5</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:carousel rounded-box gap-4 ">
                     <div className="carousel-item bg-gray-900 rounded-2xl border-2 border-gray-500">
-                        <div className="w-[400px]  p-5">
+                        <div className="w-[250px]  p-5">
                             <div className="flex">
                                 <FaStar className="text-yellow-400" />
                                 <FaStar className="text-yellow-400" />
@@ -22,7 +22,7 @@ const DefaultRating = () => {
                         </div>
                     </div>
                     <div className="carousel-item  bg-gray-900 rounded-2xl border-2 border-gray-500">
-                        <div className="w-[400px]  p-5">
+                        <div className="w-[250px]  p-5">
                             <div className="flex">
                                 <FaStar className="text-yellow-400" />
                                 <FaStar className="text-yellow-400" />
@@ -38,7 +38,7 @@ const DefaultRating = () => {
                         </div>
                     </div>
                     <div className="carousel-item  bg-gray-900 rounded-2xl border-2 border-gray-500">
-                        <div className="w-[400px]  p-5">
+                        <div className="w-[250px]  p-5">
                             <div className="flex">
                                 <FaStar className="text-yellow-400" />
                                 <FaStar className="text-yellow-400" />
