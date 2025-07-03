@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import Game from "./Game";
-import "./GameContainer.css"
 import { Slide } from "react-awesome-reveal";
 import { ContextApi } from "../ContextAPI";
 import bg from "../../../Assets/bg-3.webp"

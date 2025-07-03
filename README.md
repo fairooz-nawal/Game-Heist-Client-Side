@@ -1,119 +1,165 @@
-# React + Vite
-Game Heist, a user-friendly game review application. The goal of this project is to design a platform where users can explore and share game reviews. The website has key features such as user authentication and review management to enhance the user experience. The application have a clean and responsive UI, focusing on simplicity and functionality to provide a "chill" experience. 
+# 🎮 Game Heist
 
-# Live link : https://game-heist-syeda-fairooz-nawal.netlify.app/
+**Game Heist** is a user-friendly game review web application built with **React + Vite**. The goal of this platform is to provide gamers with a clean and chill environment to explore, submit, and manage reviews of their favorite games. Featuring robust user authentication, personalized content, and a responsive design, Game Heist ensures an intuitive experience for every user.
 
-# Layout Structure
+> 🚀 Live Site: [Game Heist](https://game-heist-syeda-fairooz-nawal.netlify.app/)
 
-## Navbar: The Navbar have the- 
+---
 
-1.Website name/logo
-2.Home
-3.All Reviews
-4.Add Review (Private/Protected Route)
-5.My Reviews (Private/Protected Route)
-6.Game WatchList (Private/Protected Route)
-7.Login/Register (Conditional):
-   If the user is not logged in, show:
-   Login: Redirects to the login page.
-   Register: Redirects to the register page.
-   If the user is logged in, show:
-   User Avatar (photoURL): Display the user’s profile picture.On hovering, display the user's displayName in a tooltip or dropdown.
-   Log Out: Logs the user out and redirects to the homepage.
+## 🧩 Features
 
-## Main Section:  
+### 🔐 Authentication & Authorization
+- Email/password-based authentication
+- Google OAuth login
+- Protected routes for review management and watchlist
+- Toast/SweetAlert notifications on login, register, and logout
 
-Main Section show different pages based on routes.  
-Footer: A Footer have  all relevant information and eye-catching design.
+### 🧭 Navigation Structure
+- **Navbar**:
+  - Logo/Website Name
+  - Home
+  - All Reviews
+  - Add Review _(Protected)_
+  - My Reviews _(Protected)_
+  - Game WatchList _(Protected)_
+  - Login/Register _(conditional)_
+  - User Avatar with tooltip or dropdown and logout button
 
-### Home Page: 
+- **Footer**:
+  - Includes relevant site links and stylish design
+
+---
+
+## 🏠 Home Page
+- **Banner/Slider** with at least 3 informative slides
+- **Highest Rated Games** section:
+  - Displays top 6 rated games from the database
+  - Each game includes "Explore Details" button linking to its full review
+- Two additional informative sections
+
+---
+
+## ✍️ Add Review (`/addReview`)
+- Protected route for adding game reviews
+- Form includes:
+  - Game Title
+  - Description
+  - Rating (1–10)
+  - Cover Image URL
+  - Publishing Year
+  - Genre (dropdown)
+  - User Name (read-only)
+  - User Email (read-only)
+- On submit: review is stored in DB and success alert is shown
+
+---
+
+## 📋 All Reviews (`/reviews`)
+- Public page that displays all submitted reviews
+- Each review is shown as a card
+- Users can click "Explore Details" to view more
+
+---
+
+## 👤 My Reviews (`/myReviews`)
+- Protected route that only shows reviews submitted by the logged-in user
+- Data displayed in a table format with:
+  - Update button (redirects to `/updateReview/:id`)
+  - Delete button (with confirmation)
+
+---
+
+## ✏️ Update Review (`/updateReview/:id`)
+- Form pre-filled with existing review data
+- All fields editable except user name and email
+- Upon submission, data is updated in DB and a success alert is shown
+- (Optional: Use modal instead of full page)
+
+---
+
+## 💖 Game Watchlist (`/myWatchlist`)
+- Protected route to manage user's personalized Watchlist
+- Watchlist is stored in a separate collection in the DB
+- Displays a table of added games
+- Users can only view their own watchlist
+
+---
+
+## ➕ Watchlist Feature
+- On the review details page, users can click **"Add to WatchList"**
+- Adds the game review (with user’s email and name) to their watchlist in the DB
+
+---
+
+## ❌ 404 Not Found Page
+- Custom 404 page for undefined routes
+
+## ⏳ Loading State
+- Global loading spinner shown during data fetching
+
+---
+
+## 📁 Tech Stack
+
+| Tech        | Description                     |
+|-------------|---------------------------------|
+| React + Vite| Modern, fast frontend framework |
+| Firebase    | Authentication & Database       |
+| TailwindCSS | Responsive UI Styling           |
+| React Router| Client-side Routing             |
+| SweetAlert2 | User-friendly Alerts/Modals     |
+| React Hook Form / useState | Form Handling     |
+
+---
+
+## 🛡️ Environment Variables
+
+To run this project locally, you’ll need to set the following Firebase environment variables:
+
+```env
+VITE_APIKEY=your_api_key
+VITE_AUTHDOMAIN=your_auth_domain
+VITE_PROJECTID=your_project_id
+VITE_STORAGEBUCKET=your_storage_bucket
+VITE_MESSAGINGSENDERID=your_messaging_sender_id
+VITE_APPID=your_app_id
+
+```
+
+## Game Heist WEB APP
+
+![Screenshot 2025-05-21 034905](https://github.com/user-attachments/assets/30785a58-d102-4433-8bed-6f7ad7bdf396)
+![Screenshot 2025-05-21 034917](https://github.com/user-attachments/assets/6f66bb59-9d63-4fd0-a31b-991bed4f90ec)
+![Screenshot 2025-05-21 034931](https://github.com/user-attachments/assets/825d4ca6-62ac-45ee-b3f5-cd6573aff4d6)
+![Screenshot 2025-05-21 034939](https://github.com/user-attachments/assets/fe08d5e6-f56f-456f-a4e2-568f6d50021e)
+![Screenshot 2025-05-21 034953](https://github.com/user-attachments/assets/2af5a96a-4b41-43b7-91f1-a60ccb549388)
+![Screenshot 2025-05-21 035002](https://github.com/user-attachments/assets/ad6627ae-962d-4e95-a493-706b475b49b2)
+![Screenshot 2025-05-21 035220](https://github.com/user-attachments/assets/5b8e9221-f812-4533-82df-6b51c1314fa3)
+![Screenshot 2025-05-21 035237](https://github.com/user-attachments/assets/9bff835d-3751-4ab2-a2ec-61fbd997a8c7)
+![Screenshot 2025-05-21 040444](https://github.com/user-attachments/assets/977946e7-8e3c-4a35-a049-bf56dedb665f)
+![Screenshot 2025-05-21 040503](https://github.com/user-attachments/assets/464b0db4-bce1-43f8-a066-4e7535ae2c02)
+![Screenshot 2025-05-21 040519](https://github.com/user-attachments/assets/d6c3cf73-7de1-4e01-96dc-829981c3b5e5)
+![Screenshot 2025-05-21 041858](https://github.com/user-attachments/assets/3ab2ea0a-a028-4c83-be43-6706624b5257)
+![Screenshot 2025-05-21 042350](https://github.com/user-attachments/assets/300d5f49-9a54-4042-be79-247854381487)
+
+## Installation and setup
+
+# Clone the repository
+git clone https://github.com/yourusername/game-heist.git
+cd game-heist
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+🤝 Contributions
+Pull requests and feature suggestions are welcome!
+
+🧑‍💻 Author
+Syeda Fairooz Nawal
+Junior MERN Stack Developer
+LinkedIn: https://www.linkedin.com/in/syeda-fairooz-nawal-softwaredeveloper/  
 
 
-Home Page:  Besides the navbar and footer the Home Page contain a banner/Slider, a Highest Rated Game Section, 2 Extra Sections, 
-
-
-Banner: a slider (you can use any type of slider/carousel)  with a minimum of 3 slides and  meaningful information
-
-Highest Rated Game Section:  Shows at least 6 cards of Highest Rated Game data based on their rating. Here the data are from the database. Each card contain a “Explore Details” button. 
-By Clicking on the “Explore Details” button it will redirect you to the details page.
-
-# Authentication
-
- Login Page: When you click the login button on the navbar it redirects to the login page. You have to use a password and email-based authentication to log in. The login page will have-  
-
-Email 
-Password 
-Google login
-
-A link that will redirect to the Register page 
-🎯Here the email and password should match with the registered email and password. If it doesn’t match, show an error. 
- The Register page has the following - 
-Name 
-Email 
-photoURL 
-password  
-A Link that will redirect to the login page 
-  For password verification you need to follow this -  
-Must have an Uppercase letter in the password 
-Must have a Lowercase letter in the password  
-Length must be at least 6 character 
-If any of this isn’t fulfilled it will show an error/toast
-After successful login or Register you need to show toast/sweet alert 
-
-### Add Review Page ( /addReview ): 
-
-Add New Review page is where users can submit reviews for games. The form has include:
-Game Cover Image/Thumbnail ( a URL for the game cover)
-Game Title/ Name (string)
-Review Description (text): A detailed review of the game.
-Rating (number): Allow users to provide a rating (e.g., 1-5 or 1-10).
-Publishing year: (Ex: 2021, 2024) 
-Genres (dropdown): Users can select one (e.g., Action, RPG, Adventure).
-User Email (Read Only): Pre-filled with the logged-in user's email address.
-User Name (Read Only): Pre-filled with the logged-in user's name.
-Submit Button: On clicking, the review data will be stored in the database, and a success message will be shown using toast or sweet alert. 
-
-This is a private/protected route, and only logged-in users can access it. Redirect non-logged-in users to the login page.
-
-### Add to WatchList
-
-A "Add to WatchList" button is used for logged-in users to like the review. 
-After Clicking on “Add to WatchList" the review data will be stored on the database(with logged-in email and username)  in the watchlist collection with the user email and username. 
-
-### All Reviews(/reviews) 
-All Reviews page to display all the reviews added by users.
-Fetch all the Reviews data from the database and display it in a card format.
-
-### My  Reviews(/myReviews): 
-A private/protected route where a user can see all the Reviews he/she has added to the database. here a user can only see his/her added data, but he/she can not access other's data.
-
-Reviews displayed in a table format, showing:
-3-4 datas
-Update button
-Delete button
-
-Update Feature:
-Clicking the "Update" button will redirect to an Update Review Page (/updateReview/:id) 
-
-Delete Feature:
-Clicking the "Delete" button will remove the review after a confirmation prompt. 
-
-Update Review Page (/updateReview/:id)  
-Update Review Page where users can update their previously submitted reviews.
-
-The form should include:
-All fields from the "Add Review Page" (game title, description, rating, genres, etc.).
-Pre-fill the fields with existing data from the database.
-User Email and User Name should remain read-only.
-Clicking the "Update" button will save changes and display a success message.
-Optional: Use a modal instead of a separate page for updating reviews. 
-
-### Game Watchlist Page (/myWatchlist)
-The Game Watchlist Page is a private/protected route where logged-in users can manage a list of games they have added to the Watchlist from the Review Details page. You need to show all the data in table format. here a user can only see his/her added data, but he/she can not access other's data. Which data you want to show is your choice. 
-
-
-
-### Other Requirements 
-
-404 page: Add a 404 page/Not Found Page
-Loading Spinner: Show a loading spinner when the data is in a loading state. 
