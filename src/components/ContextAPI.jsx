@@ -55,9 +55,11 @@ export const AppProvider = ({ children }) => {
             if (Currentuser) {
              console.log("Logged IN user", Currentuser)
              setuser(Currentuser);
+             setLoading(false);
             } else {
               console.log("No user Logged in")
               setuser(null);
+              setLoading(true);
             }
           });
           return () =>{
