@@ -1,14 +1,20 @@
 import { useLoaderData } from "react-router-dom";
-import MyReview from './MyReview';
+import MyReview from "./MyReview.jsx";
+import EmptyReviewState from "./EmptyReviewState.jsx";
+
 const MyReviewContainer = () => {
     const review = useLoaderData();
     console.log(review);
     return (
         <div>
-            {
-                review.map(review => <MyReview key={review._id} review={review}></MyReview>)
-            }
-        </div>
+  {review && review.length > 0 ? (
+    review.map((item) => (
+      <MyReview key={item._id} review={item} />
+    ))
+  ) : (
+    <EmptyReviewState />
+  )}
+</div>
     );
 };
 
