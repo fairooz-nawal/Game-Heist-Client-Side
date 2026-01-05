@@ -8,9 +8,11 @@ const AllReview = ({ review }) => {
     const { photo, gameTitle, rating, email, name, gameGenre, year } = review;
     console.log("this is from my review", photo, gameTitle, rating, email, name, gameGenre, year)
     return (
+        
+
         <div className='w-full h-[970px]  lg:h-[850px]  mx-auto relative'>
            
-            <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
+           <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color lg:h-[70%] rounded-xl">
                     <div className="p-[10%] grid grid-cols-1 lg:grid-cols-2">
                         <Slide direction="left">
@@ -34,7 +36,8 @@ const AllReview = ({ review }) => {
                     </div>
                 </div>
             </div>
-        </div>
+           </div>
+            
     );
 };
 AllReview.propTypes = {
