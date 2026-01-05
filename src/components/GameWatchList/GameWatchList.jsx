@@ -4,20 +4,27 @@ const GameWatchList = ({ game }) => {
     const { gameTitle, photo } = game;
     console.log(game);
     return (
-        <div className="nav-bg-color rounded-xl p-5 mb-5">
-            <Slide direction="left">
-                <div className="flex flex-col lg:flex-row gap-2 lg:gap-10 p-5">
-                    <div className="w-[200px] h-[250px] mx-auto ">
-                        <img src={photo} className="w-full lg:h-full mx-auto rounded-lg border-3 border-gray-200" />
-                    </div>
-                    <div className='w-full'>
-                        <div className="w-full mx-auto lg:mt-[4%] ml-0  space-y-4">
-                            <h1 className="text-3xl text-center lg:text-left lg:text-5xl font-bold">{gameTitle}</h1>
-                        </div>
-                    </div>
-                </div>
-            </Slide>
-        </div>
+<div className="nav-bg-color rounded-2xl overflow-hidden p-4 mb-6 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-gray-800/60 via-gray-900/60 to-black/60 backdrop-blur-md border border-gray-700/50">
+  <Slide direction="left">
+    <div className="flex flex-col items-center gap-4">
+      {/* Image */}
+      <div className="w-48 h-60 lg:w-56 lg:h-72 overflow-hidden rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300">
+        <img 
+          src={photo} 
+          alt={gameTitle} 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Game Title */}
+      <h1 className="text-xl lg:text-2xl font-bold text-white text-center lg:text-center drop-shadow-lg">
+        {gameTitle}
+      </h1>
+    </div>
+  </Slide>
+</div>
+
+
     );
 };
 

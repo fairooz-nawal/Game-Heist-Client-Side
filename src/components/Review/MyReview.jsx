@@ -57,7 +57,10 @@ const MyReview = ({ review }) => {
                         title: "Deleted Successfully!",
                         icon: "success",
                         draggable: true
-                    });
+                    }).then(() => {
+        // Auto reload after Swal closes
+        window.location.reload();
+    });
                 }
             
         })

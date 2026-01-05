@@ -21,7 +21,7 @@ const EmptyReviewState = () => {
         ))}
       </div>
 
-      <div className="relative z-10 glass-card rounded-3xl p-12 max-w-lg w-full text-center animate-fade-in">
+      <div className="relative z-2 glass-card rounded-3xl p-12 max-w-lg w-full text-center animate-fade-in">
         <div className="relative mx-auto w-32 h-32 mb-8 animate-scale-in">
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent rounded-full opacity-20 blur-xl" />
           <div className="relative w-full h-full rounded-full bg-muted/50 flex items-center justify-center border border-border/50">
