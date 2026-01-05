@@ -40,6 +40,7 @@ const AddReview = () => {
 
     return (
         <div className='w-full h-[1100px]  lg:h-[1400px]  mx-auto relative'>
+            
             <img className="hidden lg:block h-full" src={bg} alt="" />
             <div className=" lg:w-[70%] absolute top-[8%] lg:top-[10%] lg:left-[15%] ">
                 <div className="nav-bg-color border-2 border-gray-400 lg:h-[70%] rounded-xl">

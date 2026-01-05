@@ -3,10 +3,10 @@
 import { Gamepad2, Plus, Sparkles } from "lucide-react";
 // import { Button } from "./ui/button";
 
-const EmptyReviewState = () => {
+const EmptyGameListState = () => {
   return (
-    <div className="min-h-screen flex MainCover items-center justify-center p-6 bg-gradient-gaming relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/40  overflow-hidden pointer-events-none">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-gradient-gaming relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -39,11 +39,11 @@ const EmptyReviewState = () => {
         </div>
 
         <h2 className="font-display text-3xl font-bold mb-4 text-gradient-primary animate-slide-up">
-          No Reviews Yet
+          No Game Added Yet
         </h2>
 
         <p className="text-muted-foreground text-lg mb-8 leading-relaxed animate-slide-up animation-delay-100">
-          Your gaming journey awaits! Share your first review and help fellow gamers discover amazing titles.
+          Your gaming journey awaits! Share your favourite game and help fellow gamers discover amazing titles.
         </p>
 
         <div className="animate-slide-up animation-delay-200">
@@ -62,4 +62,4 @@ const EmptyReviewState = () => {
   );
 };
 
-export default EmptyReviewState;
+export default EmptyGameListState;
